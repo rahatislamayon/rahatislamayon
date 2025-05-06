@@ -1,0 +1,674 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project Name - GitHub README</title>
+    <style>
+        :root {
+            --primary-color: #0366d6;
+            --secondary-color: #24292e;
+            --accent-color: #2ea44f;
+            --text-color: #24292e;
+            --light-bg: #f6f8fa;
+            --border-color: #e1e4e8;
+            --hover-color: #0366d61a;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 30px;
+            padding: 20px;
+            background: linear-gradient(135deg, #2b5876, #4e4376);
+            color: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+        }
+
+        .description {
+            font-size: 1.2rem;
+            margin-bottom: 20px;
+            font-style: italic;
+        }
+
+        .badges {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+
+        .badge {
+            padding: 5px 10px;
+            border-radius: 4px;
+            background-color: #f3f4f6;
+            color: var(--secondary-color);
+            text-decoration: none;
+            font-size: 0.85rem;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            transition: transform 0.2s;
+        }
+
+        .badge:hover {
+            transform: translateY(-2px);
+        }
+
+        .badge img {
+            height: 20px;
+        }
+
+        .screenshot {
+            width: 100%;
+            max-height: 500px;
+            object-fit: cover;
+            border-radius: 8px;
+            margin: 20px 0;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .toc {
+            background-color: var(--light-bg);
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 30px;
+            border-left: 4px solid var(--primary-color);
+        }
+
+        .toc h2 {
+            margin-bottom: 15px;
+            color: var(--primary-color);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .toc h2::before {
+            content: "📌";
+        }
+
+        .toc ul {
+            list-style-type: none;
+            columns: 2;
+        }
+
+        .toc li {
+            margin-bottom: 8px;
+        }
+
+        .toc a {
+            color: var(--primary-color);
+            text-decoration: none;
+            transition: color 0.2s;
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        .toc a:hover {
+            color: var(--secondary-color);
+            text-decoration: underline;
+        }
+
+        section {
+            margin-bottom: 40px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        h2 {
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid var(--light-bg);
+            color: var(--secondary-color);
+        }
+
+        h3 {
+            margin: 15px 0;
+            color: var(--secondary-color);
+        }
+
+        ul, ol {
+            padding-left: 20px;
+            margin-bottom: 20px;
+        }
+
+        li {
+            margin-bottom: 10px;
+        }
+
+        .feature {
+            background-color: var(--light-bg);
+            padding: 15px;
+            border-radius: 8px;
+            margin-bottom: 15px;
+            border-left: 4px solid var(--accent-color);
+            transition: transform 0.2s;
+        }
+
+        .feature:hover {
+            transform: translateX(5px);
+        }
+
+        .feature-title {
+            font-weight: bold;
+            color: var(--secondary-color);
+            margin-bottom: 5px;
+        }
+
+        .tech-stack {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: 15px;
+        }
+
+        .tech {
+            background-color: var(--light-bg);
+            padding: 8px 15px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            transition: background-color 0.2s;
+        }
+
+        .tech:hover {
+            background-color: var(--hover-color);
+        }
+
+        pre {
+            background-color: var(--light-bg);
+            padding: 15px;
+            border-radius: 8px;
+            overflow-x: auto;
+            margin: 20px 0;
+            position: relative;
+        }
+
+        pre::before {
+            content: "bash";
+            position: absolute;
+            top: 0;
+            right: 0;
+            padding: 3px 10px;
+            background-color: var(--primary-color);
+            color: white;
+            border-radius: 0 8px 0 8px;
+            font-size: 0.8rem;
+        }
+
+        pre.javascript::before {
+            content: "javascript";
+        }
+
+        code {
+            font-family: 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, Courier, monospace;
+            color: var(--secondary-color);
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+
+        th, td {
+            border: 1px solid var(--border-color);
+            padding: 12px;
+            text-align: left;
+        }
+
+        th {
+            background-color: var(--light-bg);
+        }
+
+        tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+
+        .folder-structure {
+            font-family: 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, Courier, monospace;
+            background-color: var(--light-bg);
+            padding: 15px;
+            border-radius: 8px;
+            white-space: pre;
+            overflow-x: auto;
+        }
+
+        .steps {
+            counter-reset: step-counter;
+            list-style-type: none;
+            padding-left: 0;
+        }
+
+        .steps li {
+            position: relative;
+            padding-left: 40px;
+            margin-bottom: 20px;
+        }
+
+        .steps li::before {
+            content: counter(step-counter);
+            counter-increment: step-counter;
+            position: absolute;
+            left: 0;
+            top: 0;
+            background-color: var(--primary-color);
+            color: white;
+            width: 28px;
+            height: 28px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+        }
+
+        .roadmap {
+            list-style-type: none;
+            padding-left: 0;
+        }
+
+        .roadmap li {
+            position: relative;
+            padding-left: 30px;
+            margin-bottom: 15px;
+        }
+
+        .completed::before {
+            content: "✅";
+            position: absolute;
+            left: 0;
+        }
+
+        .pending::before {
+            content: "⬜";
+            position: absolute;
+            left: 0;
+        }
+
+        .acknowledgements {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .acknowledgement {
+            background-color: var(--light-bg);
+            padding: 10px 15px;
+            border-radius: 8px;
+            transition: transform 0.2s;
+        }
+
+        .acknowledgement:hover {
+            transform: translateY(-5px);
+        }
+
+        .contact {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .contact-icon {
+            width: 24px;
+            height: 24px;
+            opacity: 0.8;
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 40px;
+            padding: 20px;
+            color: var(--secondary-color);
+            border-top: 1px solid var(--border-color);
+        }
+
+        @media (max-width: 768px) {
+            .toc ul {
+                columns: 1;
+            }
+            
+            pre {
+                font-size: 0.9rem;
+            }
+            
+            h1 {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Rahat Islam Ayon</h1>
+        <p class="description">CS Student & Software Developer | Mobile & Web Applications</p>
+        <div class="badges">
+            <a href="https://github.com/rahatislamayon?tab=repositories" class="badge">
+                <img src="https://img.shields.io/badge/Repositories-40+-blue.svg" alt="Repositories">
+            </a>
+            <a href="https://github.com/rahatislamayon" class="badge">
+                <img src="https://img.shields.io/github/followers/rahatislamayon?style=social" alt="GitHub Followers">
+            </a>
+            <a href="https://github.com/rahatislamayon/Ecommerce" class="badge">
+                <img src="https://img.shields.io/github/stars/rahatislamayon/Ecommerce?style=social" alt="GitHub Stars">
+            </a>
+            <a href="https://github.com/rahatislamayon/Ecommerce/network/members" class="badge">
+                <img src="https://img.shields.io/github/forks/rahatislamayon/Ecommerce?style=social" alt="GitHub Forks">
+            </a>
+            <a href="https://github.com/rahatislamayon/Ecommerce/issues" class="badge">
+                <img src="https://img.shields.io/github/issues/rahatislamayon/Ecommerce" alt="GitHub Issues">
+            </a>
+        </div>
+    </header>
+
+    <img src="/api/placeholder/900/450" alt="Project Demo/Screenshot" class="screenshot">
+
+    <div class="toc">
+        <h2>Table of Contents</h2>
+        <ul>
+            <li><a href="#features">✨ Features</a></li>
+            <li><a href="#demo">🎮 Demo</a></li>
+            <li><a href="#technologies">🛠️ Technologies Used</a></li>
+            <li><a href="#installation">📥 Installation</a></li>
+            <li><a href="#usage">🚀 Usage</a></li>
+            <li><a href="#api">📚 API Reference</a></li>
+            <li><a href="#configuration">⚙️ Configuration</a></li>
+            <li><a href="#structure">📂 Project Structure</a></li>
+            <li><a href="#contributing">👥 Contributing</a></li>
+            <li><a href="#testing">🧪 Testing</a></li>
+            <li><a href="#roadmap">🗺️ Roadmap</a></li>
+            <li><a href="#license">📄 License</a></li>
+            <li><a href="#acknowledgements">🙏 Acknowledgements</a></li>
+            <li><a href="#contact">📞 Contact</a></li>
+        </ul>
+    </div>
+
+    <section id="features">
+        <h2>✨ Skills & Expertise</h2>
+        <div class="feature">
+            <div class="feature-title">Mobile Development</div>
+            <p>Experience in developing Android applications using Java and Flutter for cross-platform mobile development</p>
+        </div>
+        <div class="feature">
+            <div class="feature-title">Web Development</div>
+            <p>Proficient in web development with React.js, JavaScript, HTML, CSS, and related frontend technologies</p>
+        </div>
+        <div class="feature">
+            <div class="feature-title">Programming Languages</div>
+            <p>Strong skills in Java, Python, C, C++, JavaScript, and Dart for various development needs</p>
+        </div>
+        <div class="feature">
+            <div class="feature-title">Database & Backend</div>
+            <p>Working knowledge of MySQL, Firebase, and other database technologies for backend development</p>
+        </div>
+    </section>
+
+    <section id="demo">
+        <h2>🎮 Key Projects</h2>
+        <div class="feature">
+            <div class="feature-title"><a href="https://github.com/rahatislamayon/Ecommerce">Ecommerce App</a></div>
+            <p>A complete ecommerce solution with product management, cart functionality, and user authentication</p>
+        </div>
+        <div class="feature">
+            <div class="feature-title"><a href="https://github.com/rahatislamayon/dsebd">DSE BD Stock Market App</a></div>
+            <p>Application for tracking and analyzing Bangladesh stock market data</p>
+        </div>
+        <div class="feature">
+            <div class="feature-title"><a href="https://github.com/rahatislamayon/Flutter-Projects-All">Flutter Projects Collection</a></div>
+            <p>Various Flutter applications showcasing cross-platform mobile development skills</p>
+        </div>
+        <div class="feature">
+            <div class="feature-title"><a href="https://github.com/rahatislamayon/Python">Python Projects</a></div>
+            <p>Collection of Python projects including data analysis and automation scripts</p>
+        </div>
+        <img src="/api/placeholder/900/450" alt="Projects Preview" class="screenshot">
+    </section>
+
+    <section id="technologies">
+        <h2>🛠️ Technologies Used</h2>
+        <div class="tech-stack">
+            <div class="tech">Java</div>
+            <div class="tech">Python</div>
+            <div class="tech">C/C++</div>
+            <div class="tech">JavaScript</div>
+            <div class="tech">React.js</div>
+            <div class="tech">Flutter</div>
+            <div class="tech">Dart</div>
+            <div class="tech">Android SDK</div>
+            <div class="tech">Firebase</div>
+            <div class="tech">MySQL</div>
+            <div class="tech">HTML/CSS</div>
+            <div class="tech">Bootstrap</div>
+            <div class="tech">Git</div>
+            <div class="tech">GitHub</div>
+        </div>
+    </section>
+
+    <section id="installation">
+        <h2>📥 Education & Experience</h2>
+        <div class="feature">
+            <div class="feature-title">Computer Science Student</div>
+            <p>Currently pursuing a degree in Computer Science with focus on software development</p>
+        </div>
+        <div class="feature">
+            <div class="feature-title">Project Development</div>
+            <p>Experienced in developing mobile and web applications for various purposes including e-commerce, stock market tracking, and utility applications</p>
+        </div>
+        <div class="feature">
+            <div class="feature-title">Self-Learning</div>
+            <p>Continuously improving skills through online resources, documentation, and personal projects</p>
+        </div>
+
+        <h3>Notable Repositories</h3>
+        <ul>
+            <li><a href="https://github.com/rahatislamayon/Ecommerce">Ecommerce</a> - Full-featured e-commerce application</li>
+            <li><a href="https://github.com/rahatislamayon/dsebd">DSE BD</a> - Stock market application</li>
+            <li><a href="https://github.com/rahatislamayon/Kotlin-Practice">Kotlin Practice</a> - Learning and practicing Kotlin for Android development</li>
+            <li><a href="https://github.com/rahatislamayon/Java-Practice">Java Practice</a> - Java programming exercises and projects</li>
+        </ul>
+    </section>
+
+    <section id="usage">
+        <h2>🚀 Coding Highlights</h2>
+        <pre class="javascript">
+// Example from a React component
+import React, { useState, useEffect } from 'react';
+
+function ProductList() {
+  const [products, setProducts] = useState([]);
+  
+  useEffect(() => {
+    // Fetch products from API
+    fetch('/api/products')
+      .then(res => res.json())
+      .then(data => setProducts(data));
+  }, []);
+
+  return (
+    <div className="product-grid">
+      {products.map(product => (
+        <ProductCard key={product.id} product={product} />
+      ))}
+    </div>
+  );
+}</pre>
+
+        <p>This showcases a typical React component structure used in various projects. For more examples, check out the <a href="https://github.com/rahatislamayon">GitHub repositories</a>.</p>
+    </section>
+
+    <section id="api">
+        <h2>📚 GitHub Stats</h2>
+        <div style="display:flex; justify-content:center; gap:20px; flex-wrap:wrap;">
+            <img src="https://github-readme-stats.vercel.app/api?username=rahatislamayon&show_icons=true&theme=radical" alt="GitHub Stats" style="max-width:100%; height:auto; border-radius:8px;">
+            <img src="https://github-readme-streak-stats.herokuapp.com/?user=rahatislamayon&theme=dark" alt="GitHub Streak" style="max-width:100%; height:auto; border-radius:8px;">
+        </div>
+        <div style="display:flex; justify-content:center; margin-top:20px;">
+            <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=rahatislamayon&layout=compact&theme=radical" alt="Top Languages" style="max-width:100%; height:auto; border-radius:8px;">
+        </div>
+        
+        <h3 style="margin-top:30px;">Contribution Activity</h3>
+        <p>Regular contributions to personal and collaborative projects, with focus on mobile application development and web technologies.</p>
+    </section>
+
+    <section id="configuration">
+        <h2>⚙️ Featured Projects</h2>
+        <p>Here are some highlighted projects from my GitHub repositories:</p>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>Project</th>
+                    <th>Description</th>
+                    <th>Technologies</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><a href="https://github.com/rahatislamayon/Ecommerce"><code>Ecommerce</code></a></td>
+                    <td>Full-featured e-commerce application with product catalog, cart functionality, and user authentication</td>
+                    <td>Android, Java, Firebase</td>
+                </tr>
+                <tr>
+                    <td><a href="https://github.com/rahatislamayon/dsebd"><code>DSE BD</code></a></td>
+                    <td>Stock market tracker for Bangladesh market with real-time data visualization</td>
+                    <td>Android, Java, API Integration</td>
+                </tr>
+                <tr>
+                    <td><a href="https://github.com/rahatislamayon/Snake-Game"><code>Snake Game</code></a></td>
+                    <td>Classic Snake game implementation with modern features</td>
+                    <td>Python, Pygame</td>
+                </tr>
+                <tr>
+                    <td><a href="https://github.com/rahatislamayon/Flutter-Projects-All"><code>Flutter Projects</code></a></td>
+                    <td>Collection of cross-platform mobile applications</td>
+                    <td>Flutter, Dart, Firebase</td>
+                </tr>
+            </tbody>
+        </table>
+    </section>
+
+    <section id="structure">
+        <h2>📂 Development Approach</h2>
+        <div class="folder-structure">
+Typical Project Structure:
+├── app/                  # Main application code
+│   ├── src/main/         # Source files (Java/Kotlin for Android)
+│   │   ├── java/         # Java/Kotlin classes
+│   │   │   ├── activities/  # Activity files
+│   │   │   ├── adapters/    # Adapter classes for RecyclerView etc.
+│   │   │   ├── models/      # Data models
+│   │   │   ├── utils/       # Utility classes
+│   │   │   └── services/    # Background services
+│   │   └── res/          # Android resources
+│   │       ├── layout/      # UI layouts
+│   │       ├── values/      # Strings, colors, styles
+│   │       └── drawable/    # Images and graphics
+│   └── build.gradle      # Project configuration
+├── assets/              # Project assets
+├── lib/                 # Flutter project source (for Flutter projects)
+└── README.md            # Project documentation</div>
+
+        <p>My projects typically follow clean architecture principles with clear separation of concerns and maintainable code structure. I prioritize scalability, performance, and user experience in all my development work.</p>
+    </section>
+
+    <section id="contributing">
+        <h2>👥 Collaboration</h2>
+        <p>I'm open to collaborating on interesting projects and contributing to open-source initiatives. If you have a project idea or want to collaborate, feel free to reach out!</p>
+
+        <div class="feature">
+            <div class="feature-title">Open to Work</div>
+            <p>Interested in internships, part-time, and project-based opportunities in software development</p>
+        </div>
+        
+        <div class="feature">
+            <div class="feature-title">Learning Focus</div>
+            <p>Currently enhancing skills in advanced mobile development, cloud services, and modern web frameworks</p>
+        </div>
+
+        <p>For collaboration inquiries, please reach out via email or GitHub.</p>
+    </section>
+
+    <section id="testing">
+        <h2>🧪 Development Philosophy</h2>
+        <div class="feature">
+            <div class="feature-title">User-Centric Design</div>
+            <p>Creating applications with focus on user experience and intuitive interfaces</p>
+        </div>
+        
+        <div class="feature">
+            <div class="feature-title">Clean Code</div>
+            <p>Writing maintainable, well-documented code following best practices</p>
+        </div>
+        
+        <div class="feature">
+            <div class="feature-title">Continuous Learning</div>
+            <p>Regularly exploring new technologies and improving existing skills</p>
+        </div>
+    </section>
+
+    <section id="roadmap">
+        <h2>🗺️ Learning Path</h2>
+        <ul class="roadmap">
+            <li class="completed">Java & Android Development</li>
+            <li class="completed">Flutter Cross-Platform Development</li>
+            <li class="completed">Web Development Fundamentals</li>
+            <li class="completed">Python Programming</li>
+            <li class="pending">Advanced React & State Management</li>
+            <li class="pending">Cloud Services & DevOps</li>
+            <li class="pending">Machine Learning & AI</li>
+        </ul>
+
+        <p>Continuously expanding knowledge and exploring new technologies to build better solutions.</p>
+    </section>
+
+    <section id="license">
+        <h2>📄 Certifications & Achievements</h2>
+        <p>Pursuing certifications in mobile development and web technologies to further enhance professional qualifications. Active participant in coding competitions and hackathons.</p>
+    </section>
+
+9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+                </svg>
+                <a href="#">LinkedIn</a>
+            </div>
+        </div>
+        <p style="margin-top: 20px;">Project Link: <a href="https://github.com/yourusername/project-name">https://github.com/yourusername/project-name</a></p>
+    </section>
+
+    <footer>
+        <p>Made with ❤️ by <a href="https://github.com/yourusername">Your Name</a></p>
+    </footer>
+</body>
+</html>
