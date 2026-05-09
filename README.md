@@ -1,6 +1,6 @@
 # Hi there, I'm Rahat Islam Ayon 👋
 
-🚀 Passionate about coding, problem-solving, and building projects that make an impact.  
+🚀 Passionate about computer, real life problem-solving, and building projects that make an impact.  
 Currently exploring **Python, Java, and web technologies**, while experimenting with **AI and automation tools**.  
 
 ---
